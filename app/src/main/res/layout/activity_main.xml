@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/img_single_bg"
+    tools:context="cn.jit.musicplayer.MainActivity">
+
+    <!-- 1.top -->
+
+    <include
+        android:id="@+id/include_top_id"
+        layout="@layout/layout_top" />
+    <!-- 2.bottom -->
+
+    <include
+        android:id="@+id/include_bottom_id"
+        layout="@layout/layout_bottom" />
+    <!-- 3.center -->
+
+    <cn.jit.musicplayer.views.ScrollableViewGroup
+        android:id="@+id/svg_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/include_bottom_id"
+        android:layout_below="@id/include_top_id" >
+
+        <include layout="@layout/include_page_play" />
+
+        <include layout="@layout/include_page_lrc" />
+
+        <include layout="@layout/include_page_list" />
+    </cn.jit.musicplayer.views.ScrollableViewGroup>
+
+</RelativeLayout>
